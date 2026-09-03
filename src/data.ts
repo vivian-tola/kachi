@@ -3,7 +3,7 @@
 // render whatever is here.
 
 export const site = {
-  fullName: "Onyeka Okwuchi",
+  fullName: "Kachi Okwuchi",
   showAvailability: true,
   availabilityText: "Open to junior frontend roles — from October 2026",
 };
@@ -30,9 +30,8 @@ const heroFacts: HeroFact[] = [
   {
     label: "Elsewhere",
     links: [
-      { label: "GitHub", href: "#contact" },
-      { label: "Frontend Mentor", href: "#contact" },
-      { label: "LinkedIn", href: "#contact" },
+      { label: "GitHub", href: "https://github.com/vivian-tola"  },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/kachi-okwuchi-5ba77a339/" },
     ],
   },
 ];
@@ -47,7 +46,7 @@ export const hero = {
   ],
   paragraph:
     "I finished my ND in Nutrition and Dietetics, then taught myself frontend development on the side through ALX. I'm continuing on to a BSc in Microbiology, but what I actually want right now is a junior frontend role — somewhere to sharpen the React, state management and API skills I've been building, with people who review code out loud.",
-  primaryCta: { label: "See the two projects →", href: "#work" },
+  primaryCta: { label: "See the project →", href: "#work" },
   secondaryCta: { label: "Download resume (PDF)", href: "https://docs.google.com/document/d/1f0ICLT-D1SDyYLY-Cjlrgc6iZlQTAcgD/edit?usp=drivesdk&ouid=100154785997743720001&rtpof=true&sd=true" },
   facts: heroFacts,
 };
@@ -75,10 +74,10 @@ export const projects: Project[] = [
     title: "Currency Converter",
     blurb:
       "Convert between 30-odd currencies against live mid-market rates. Vanilla JS, no libraries — one of my first ALX projects, and I wanted to feel the fetch, the loading state and the failure case myself.",
-    stack: ["HTML", "CSS Grid", "JavaScript", "Fetch API", "Netlify"],
+    stack: ["HTML", "CSS Grid", "JavaScript", "React", "Fetch API", "Vercel"],
     shotCaption: "Screenshot of the converter — add yours here",
-    demoHref: "#work",
-    codeHref: "#work",
+    demoHref: "https://currex-converter.vercel.app/",
+    codeHref: "https://github.com/vivian-tola/CurrexConverter",
     notes: [
       {
         label: "What broke",
@@ -91,32 +90,6 @@ export const projects: Project[] = [
       {
         label: "Still open",
         text: "Offline mode shows stale rates without saying they're stale. Next version puts the fetch time on screen.",
-      },
-    ],
-  },
-  {
-    id: "shift",
-    num: "02",
-    kicker: "Solo build · 2 weeks",
-    title: "Shift Swap Board",
-    blurb:
-      "A board for staff to post and claim shifts — my first project pairing React with Zustand for state and Tailwind for styling, instead of scattering useState and hand-written CSS everywhere.",
-    stack: ["React", "Zustand", "Tailwind CSS", "LocalStorage", "Vite"],
-    shotCaption: "Screenshot of the shift board — add yours here",
-    demoHref: "#work",
-    codeHref: "#work",
-    notes: [
-      {
-        label: "What broke",
-        text: "Every claim re-rendered the whole board and lost the scroll position, because I was threading callbacks down through five layers of props.",
-      },
-      {
-        label: "What I did",
-        text: "Pulled the shared state into a Zustand store instead of prop-drilling, then keyed the list properly so re-renders stayed cheap.",
-      },
-      {
-        label: "Still open",
-        text: "There's no real backend — two people on two phones don't see the same board yet. That's what I'm learning next.",
       },
     ],
   },
@@ -163,7 +136,7 @@ export const learning: { when: string; what: string; note: string }[] = [
   {
     when: "Next",
     what: "A real backend",
-    note: "Node and a database, so the shift board syncs between two phones.",
+    note: "Node and a database, so the Shift Swap Board (next up) can sync between two phones instead of living in localStorage.",
   },
   {
     when: "Ongoing",
@@ -187,6 +160,14 @@ export type DesignInspiration = {
 };
 
 export const designInspirations: DesignInspiration[] = [
+  {
+    id: "shift-swap",
+    title: "Shift Swap Board",
+    source: "My own idea — from a scheduling problem I've seen firsthand",
+    focus:
+      "A board for staff to post and claim shifts. First real project pairing React with Zustand for shared state and Tailwind for styling, instead of scattering useState and hand-written CSS everywhere.",
+    status: "Not started",
+  },
   {
     id: "pricing",
     title: "SaaS pricing page — bold type, dark-mode toggle",

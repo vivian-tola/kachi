@@ -8,7 +8,11 @@ export default function PlaceholderImage({
   className?: string;
 }) {
   return (
-    <div className={className ? `${styles.shot} ${className}` : styles.shot}>
+    <div
+      className={className ? `${styles.shot} ${className}` : styles.shot}
+      role="img"
+      aria-label={caption}
+    >
       <svg
         className={styles.shotIcon}
         width="28"
@@ -25,7 +29,6 @@ export default function PlaceholderImage({
         <circle cx="8.5" cy="8.5" r="1.5" />
         <path d="m21 15-5-5L5 21" />
       </svg>
-      <span className={styles.shotCaption}>{caption}</span>
     </div>
   );
 }

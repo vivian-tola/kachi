@@ -9,7 +9,7 @@ export default function ContactSection() {
         <h2 className={styles.contactHeadline}>{contact.headline}</h2>
         <div className={styles.contactGrid}>
           {contact.cards.map((c) => (
-            <a key={c.label} href={c.href} className={styles.contactCard}>
+            <a key={c.label} href={c.href} target="_blank" className={styles.contactCard}>
               <span className={styles.contactCardLabel}>{c.label}</span>
               <span className={styles.contactCardValue}>{c.value}</span>
             </a>

@@ -9,9 +9,9 @@ const archivo = Archivo({
 });
 
 export const metadata: Metadata = {
-  title: "Onyeka Okwuchi — Portfolio",
+  title: "Kachi Okwuchi — Portfolio",
   description:
-    "Frontend developer, eight months in. Two projects finished end to end, honestly documented.",
+    "ALX-trained frontend developer. Real projects, honestly documented.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

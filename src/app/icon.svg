@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    :root { --bg: #f3f2f2; --accent: #ae1800; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #201e1d; }
+    }
+  </style>
+  <rect width="32" height="32" fill="var(--bg)" />
+  <path d="M7 10 L15 16 L7 22" fill="none" stroke="var(--accent)" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M18 23 L25 23" fill="none" stroke="var(--accent)" stroke-width="4.6" stroke-linecap="round" />
+</svg>

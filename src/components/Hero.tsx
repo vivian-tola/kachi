@@ -19,7 +19,7 @@ export default function Hero() {
           <a href={hero.primaryCta.href} className={styles.ctaPrimary}>
             {hero.primaryCta.label}
           </a>
-          <a href={hero.secondaryCta.href} className={styles.ctaSecondary}>
+          <a href={hero.secondaryCta.href} target="_blank" className={styles.ctaSecondary}>
             {hero.secondaryCta.label}
           </a>
         </div>
