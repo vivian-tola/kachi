@@ -228,7 +228,7 @@ export const contact = {
   cards: [
     { label: "Email", value: "okwuchiomotolaonyeka@gmail.com", href: "mailto:okwuchiomotolaonyeka@gmail.com" },
     { label: "GitHub", value: "github.com/vivian-tola", href: "https://github.com/vivian-tola" },
-    { label: "Resume", value: "One page, PDF ↓", href: "#contact" },
+    { label: "Resume", value: "One page, PDF ↓", href: "https://docs.google.com/document/d/1f0ICLT-D1SDyYLY-Cjlrgc6iZlQTAcgD/edit?usp=drivesdk&ouid=100154785997743720001&rtpof=true&sd=true" },
   ],
 };
 
