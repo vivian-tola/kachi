@@ -107,6 +107,60 @@
   font-weight: 800;
 }
 
+.hamburgerBtn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex: none;
+  border: 1px solid var(--pf-line-soft);
+  background: transparent;
+  color: var(--pf-ink);
+  cursor: pointer;
+  padding: 0;
+}
+.hamburgerBtn:hover {
+  background: color-mix(in srgb, var(--pf-ink) 7%, transparent);
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--pf-line-soft);
+  background: var(--pf-bg);
+}
+.mobileNavLink {
+  padding: 14px clamp(20px, 5vw, 48px);
+  border-bottom: 1px solid var(--pf-line-soft);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pf-ink) !important;
+}
+.mobileNavLink:hover {
+  color: var(--pf-accent) !important;
+  background: color-mix(in srgb, var(--pf-ink) 5%, transparent);
+}
+.mobileNavContact {
+  color: var(--pf-accent) !important;
+}
+
+@media (max-width: 640px) {
+  .nav {
+    display: none;
+  }
+  .hamburgerBtn {
+    display: inline-flex;
+  }
+}
+@media (min-width: 641px) {
+  .mobileNav {
+    display: none !important;
+  }
+}
+
 /* Availability banner */
 .availability {
   background: var(--pf-invert-bg);
