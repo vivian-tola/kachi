@@ -48,7 +48,7 @@ export const hero = {
   paragraph:
     "I finished my ND in Nutrition and Dietetics, then taught myself frontend development on the side through ALX. I'm continuing on to a BSc in Microbiology, but what I actually want right now is a junior frontend role — somewhere to sharpen the React, state management and API skills I've been building, with people who review code out loud.",
   primaryCta: { label: "See the two projects →", href: "#work" },
-  secondaryCta: { label: "Download resume (PDF)", href: "#contact" },
+  secondaryCta: { label: "Download resume (PDF)", href: "https://docs.google.com/document/d/1f0ICLT-D1SDyYLY-Cjlrgc6iZlQTAcgD/edit?usp=drivesdk&ouid=100154785997743720001&rtpof=true&sd=true" },
   facts: heroFacts,
 };
 
