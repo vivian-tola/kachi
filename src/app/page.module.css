@@ -1,4 +1,4 @@
-.page {
+:root {
   --pf-bg: #f3f2f2;
   --pf-surface: #eae9e9;
   --pf-ink: #201e1d;
@@ -18,18 +18,10 @@
   --pf-ink-75: color-mix(in srgb, var(--pf-ink) 75%, transparent);
   --pf-ink-80: color-mix(in srgb, var(--pf-ink) 80%, transparent);
   --pf-ink-85: color-mix(in srgb, var(--pf-ink) 85%, transparent);
-
-  min-height: 100vh;
-  background: var(--pf-bg);
-  color: var(--pf-ink);
-  font-family: var(--font-archivo), system-ui, sans-serif;
-  font-size: 15px;
-  line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
 }
 
 @media (prefers-color-scheme: dark) {
-  .page {
+  :root:not([data-theme="light"]) {
     --pf-bg: #201e1d;
     --pf-surface: #2d2b2b;
     --pf-ink: #f8f4f4;
@@ -38,6 +30,26 @@
     --pf-invert-bg: #f3f2f2;
     --pf-invert-fg: #201e1d;
   }
+}
+
+:root[data-theme="dark"] {
+  --pf-bg: #201e1d;
+  --pf-surface: #2d2b2b;
+  --pf-ink: #f8f4f4;
+  --pf-accent-deep: color-mix(in srgb, var(--pf-accent) 62%, #f8f4f4);
+  --pf-accent-light: color-mix(in srgb, var(--pf-accent) 72%, #f8f4f4);
+  --pf-invert-bg: #f3f2f2;
+  --pf-invert-fg: #201e1d;
+}
+
+.page {
+  min-height: 100vh;
+  background: var(--pf-bg);
+  color: var(--pf-ink);
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
 }
 
 .page a {
@@ -71,8 +83,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
+}
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.4vw, 20px);
 }
 .logo {
   font-weight: 800;
@@ -122,6 +139,24 @@
 }
 .hamburgerBtn:hover {
   background: color-mix(in srgb, var(--pf-ink) 7%, transparent);
+}
+
+.themeToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex: none;
+  border: 1px solid var(--pf-line-soft);
+  background: transparent;
+  color: var(--pf-ink);
+  cursor: pointer;
+  padding: 0;
+}
+.themeToggle:hover {
+  background: color-mix(in srgb, var(--pf-ink) 7%, transparent);
+  color: var(--pf-accent);
 }
 
 .mobileNav {

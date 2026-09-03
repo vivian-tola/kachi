@@ -3,6 +3,7 @@
 import { useState } from "react";
 import styles from "@/app/page.module.css";
 import { site } from "@/data";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
   { href: "#work", label: "Work" },
@@ -22,42 +23,45 @@ export default function Nav() {
           {site.fullName}
           <span className={styles.logoDot}>.</span>
         </a>
-        <nav className={styles.nav}>
-          {links.map((l) => (
-            <a key={l.href} href={l.href} className={styles.navLink}>
-              {l.label}
+        <div className={styles.headerRight}>
+          <nav className={styles.nav}>
+            {links.map((l) => (
+              <a key={l.href} href={l.href} className={styles.navLink}>
+                {l.label}
+              </a>
+            ))}
+            <a href="#contact" className={styles.navContact}>
+              Contact
             </a>
-          ))}
-          <a href="#contact" className={styles.navContact}>
-            Contact
-          </a>
-        </nav>
-        <button
-          type="button"
-          className={styles.hamburgerBtn}
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          onClick={() => setOpen((v) => !v)}
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
+          </nav>
+          <ThemeToggle />
+          <button
+            type="button"
+            className={styles.hamburgerBtn}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            onClick={() => setOpen((v) => !v)}
           >
-            {open ? (
-              <path d="M6 6 L18 18 M18 6 L6 18" />
-            ) : (
-              <path d="M4 7 L20 7 M4 12 L20 12 M4 17 L20 17" />
-            )}
-          </svg>
-        </button>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              {open ? (
+                <path d="M6 6 L18 18 M18 6 L6 18" />
+              ) : (
+                <path d="M4 7 L20 7 M4 12 L20 12 M4 17 L20 17" />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
 
       {open && (
