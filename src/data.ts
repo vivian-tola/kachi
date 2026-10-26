@@ -8,47 +8,20 @@ export const site = {
   availabilityText: "Open to junior frontend roles — from October 2026",
 };
 
-export type HeroFact =
-  | { label: string; value: string }
-  | { label: string; links: { label: string; href: string }[] };
-
-const heroFacts: HeroFact[] = [
-  { label: "Based in", value: "Lagos, Nigeria · remote-friendly (WAT)" },
-  {
-    label: "Working in",
-    value: "React · Zustand · Tailwind CSS · API integration · Git",
-  },
-  {
-    label: "Came from",
-    value:
-      "ND in Nutrition and Dietetics — taught myself frontend on the side through ALX.",
-  },
-  {
-    label: "Studying",
-    value: "Working toward a BSc in Microbiology, alongside frontend dev.",
-  },
-  {
-    label: "Elsewhere",
-    links: [
-      { label: "GitHub", href: "https://github.com/vivian-tola"  },
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/kachi-okwuchi-5ba77a339/" },
-    ],
-  },
+export const socials = [
+  { label: "GitHub", href: "https://github.com/vivian-tola" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/kachi-okwuchi-5ba77a339/" },
 ];
 
 export const hero = {
   kicker: "ND in Nutrition & Dietetics — frontend dev via ALX",
-  titleLines: [
-    "I build small",
-    "things carefully,",
-    "then write down",
-    "what broke.",
-  ],
+  title: "I build small things carefully, then write down what broke.",
+  titleHighlight: ["what", "broke."],
   paragraph:
-    "I finished my ND in Nutrition and Dietetics, then taught myself frontend development on the side through ALX. I'm continuing on to a BSc in Microbiology, but what I actually want right now is a junior frontend role — somewhere to sharpen the React, state management and API skills I've been building, with people who review code out loud.",
-  primaryCta: { label: "See the project →", href: "#work" },
-  secondaryCta: { label: "Download resume (PDF)", href: "https://docs.google.com/document/d/1f0ICLT-D1SDyYLY-Cjlrgc6iZlQTAcgD/edit?usp=drivesdk&ouid=100154785997743720001&rtpof=true&sd=true" },
-  facts: heroFacts,
+    "I taught myself frontend through ALX alongside an ND in Nutrition and Dietetics. Now I want a junior frontend role, with people who review code out loud.",
+  primaryCta: { label: "See the project", href: "#work" },
+  secondaryCta: { label: "Resume", href: "https://docs.google.com/document/d/1f0ICLT-D1SDyYLY-Cjlrgc6iZlQTAcgD/edit?usp=drivesdk&ouid=100154785997743720001&rtpof=true&sd=true" },
+  screenTagline: "frontend developer, in progress",
 };
 
 export type ProjectNote = { label: string; text: string };
@@ -61,6 +34,8 @@ export type Project = {
   blurb: string;
   stack: string[];
   shotCaption: string;
+  // Screenshot in /public; leave out to show the caption placeholder instead.
+  shot?: string;
   demoHref: string;
   codeHref: string;
   notes: ProjectNote[];
@@ -75,7 +50,8 @@ export const projects: Project[] = [
     blurb:
       "Convert between 30-odd currencies against live mid-market rates. Vanilla JS, no libraries — one of my first ALX projects, and I wanted to feel the fetch, the loading state and the failure case myself.",
     stack: ["HTML", "CSS Grid", "JavaScript", "React", "Fetch API", "Vercel"],
-    shotCaption: "Screenshot of the converter — add yours here",
+    shotCaption: "Currency Converter home page showing live exchange rates",
+    shot: "/projects/currency-converter.png",
     demoHref: "https://currex-converter.vercel.app/",
     codeHref: "https://github.com/vivian-tola/CurrexConverter",
     notes: [
@@ -125,6 +101,22 @@ export const skills: { level: string; items: string[] }[] = [
       "A real backend (Node)",
     ],
   },
+];
+
+// Short labels for the "pop the bubbles" pond. `comfy` bubbles are drawn bigger.
+export const bubbles: { name: string; comfy: boolean }[] = [
+  { name: "React", comfy: true },
+  { name: "Tailwind", comfy: true },
+  { name: "HTML", comfy: true },
+  { name: "Flexbox & Grid", comfy: true },
+  { name: "Responsive", comfy: true },
+  { name: "Git", comfy: true },
+  { name: "Fetch & async", comfy: false },
+  { name: "Zustand", comfy: false },
+  { name: "JavaScript", comfy: false },
+  { name: "Accessible forms", comfy: false },
+  { name: "TypeScript", comfy: false },
+  { name: "Node", comfy: false },
 ];
 
 export const learning: { when: string; what: string; note: string }[] = [
@@ -195,25 +187,32 @@ export const designInspirations: DesignInspiration[] = [
 ];
 
 export const about = {
-  portraitCaption: "Portrait placeholder — black and white",
+  heading: ["Nutrition by training,", "frontend", "by choice."],
+  portraitAlt: "Portrait of Kachi Okwuchi",
+  portraitCaption: "That's me, probably debugging",
   paragraphs: [
     "I completed my ND in Nutrition and Dietetics, and learned frontend development on the side through ALX — evenings and weekends spent rebuilding interfaces until React finally clicked.",
     "I'm continuing on to a BSc in Microbiology, but frontend is the skill I want to get genuinely good at. I work comfortably in React, wire up API integrations, manage state with Zustand, and style everything with Tailwind.",
     "What I need now is a junior role that sharpens what ALX started — a team that reviews code out loud, so guessing turns into knowing.",
   ],
+  facts: [
+    { icon: "pin", label: "Lagos · remote-friendly (WAT)" },
+    { icon: "grad", label: "ALX Frontend, finished" },
+    { icon: "keyboard", label: "Keyboard-tested" },
+  ] as const,
 };
 
 export const contact = {
   kicker: "Contact",
-  headline: "Got a junior seat and a review culture? Let's talk.",
-  cards: [
-    { label: "Email", value: "okwuchiomotolaonyeka@gmail.com", href: "mailto:okwuchiomotolaonyeka@gmail.com" },
-    { label: "GitHub", value: "github.com/vivian-tola", href: "https://github.com/vivian-tola" },
-    { label: "Resume", value: "One page, PDF ↓", href: "https://docs.google.com/document/d/1f0ICLT-D1SDyYLY-Cjlrgc6iZlQTAcgD/edit?usp=drivesdk&ouid=100154785997743720001&rtpof=true&sd=true" },
+  headline: "Got a junior seat and a review culture?",
+  headlineAccent: "Let's talk.",
+  email: "okwuchiomotolaonyeka@gmail.com",
+  links: [
+    { label: "GitHub", href: "https://github.com/vivian-tola" },
+    { label: "Resume", href: "https://docs.google.com/document/d/1f0ICLT-D1SDyYLY-Cjlrgc6iZlQTAcgD/edit?usp=drivesdk&ouid=100154785997743720001&rtpof=true&sd=true" },
   ],
 };
 
 export const footer = {
-  tagline: "frontend developer, in progress",
-  note: "Built with NextJs and Tailwind. Learning as I go.",
+  note: "Built with Next.js and three.js, mostly at night",
 };

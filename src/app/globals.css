@@ -1,29 +1,48 @@
 @import "tailwindcss";
 
+/* Pastel daydream tokens. `--deep` stays dark in both themes for text sitting on pastel accents. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-archivo);
+  color-scheme: light;
+  --bg: #FFF1F4; --bg2: #FFE3EA; --ink: #3A1630; --mut: #80566C; --paper: #FFFFFF; --deep: #3A1630;
+  --rose: #FF5C8A; --lilac: #B9A8FF; --butter: #FFD66B; --mint: #9FE3C9; --peach: #FFC9A8;
+  --surface: #FFFFFF; --surface-a: rgba(255, 255, 255, .72); --surface-b: rgba(255, 255, 255, .5); --edge: rgba(255, 255, 255, .9);
+  --cream: #FFF7E0; --slot: rgba(255, 255, 255, .14); --bubble: rgba(255, 255, 255, .35); --cloud: #FFFFFF; --bubble-glow: transparent;
+  --g1: #EDE6FF; --g2: #FFF4D6; --g3: #E2F7EF; --blush: #FFD3E0; --lav: #DCD3FF;
+  --shadow: 0 24px 60px -28px rgba(255, 92, 138, .55); --shadow-ink: rgba(58, 22, 48, .5);
+  --f-display: var(--font-dynapuff), "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  --f-body: var(--font-nunito), "Avenir Next", "Trebuchet MS", sans-serif;
+  --r-lg: 36px; --r-md: 26px; --spring: cubic-bezier(.34, 1.56, .64, 1); --ease: cubic-bezier(.16, 1, .3, 1);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #1C1022; --bg2: #2E1A33; --ink: #FBE9F0; --mut: #C9A6BA; --paper: #1C1022; --rose: #FF6F97;
+    --surface: #2A1830; --surface-a: rgba(42, 24, 48, .72); --surface-b: rgba(42, 24, 48, .5); --edge: rgba(255, 255, 255, .08);
+    --cream: #3A2A22; --slot: rgba(28, 16, 34, .14); --bubble: rgba(255, 255, 255, .07); --cloud: #3B2444; --bubble-glow: rgba(20, 8, 24, .85);
+    --g1: #2B1F4A; --g2: #35231B; --g3: #132B26; --blush: rgba(255, 92, 138, .2); --lav: rgba(185, 168, 255, .18);
+    --shadow: 0 24px 60px -28px rgba(255, 92, 138, .35); --shadow-ink: rgba(0, 0, 0, .6);
   }
 }
-
-html {
-  scroll-behavior: smooth;
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #1C1022; --bg2: #2E1A33; --ink: #FBE9F0; --mut: #C9A6BA; --paper: #1C1022; --rose: #FF6F97;
+  --surface: #2A1830; --surface-a: rgba(42, 24, 48, .72); --surface-b: rgba(42, 24, 48, .5); --edge: rgba(255, 255, 255, .08);
+  --cream: #3A2A22; --slot: rgba(28, 16, 34, .14); --bubble: rgba(255, 255, 255, .07); --cloud: #3B2444; --bubble-glow: rgba(20, 8, 24, .85);
+  --g1: #2B1F4A; --g2: #35231B; --g3: #132B26; --blush: rgba(255, 92, 138, .2); --lav: rgba(185, 168, 255, .18);
+  --shadow: 0 24px 60px -28px rgba(255, 92, 138, .35); --shadow-ink: rgba(0, 0, 0, .6);
 }
 
+html { scroll-behavior: smooth; }
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0; color: var(--ink); font: 500 17px/1.6 var(--f-body); overflow-x: hidden;
+  background: radial-gradient(1200px 700px at 10% -10%, var(--g1) 0, transparent 60%), radial-gradient(900px 700px at 100% 30%, var(--g2) 0, transparent 60%), radial-gradient(900px 800px at 0% 90%, var(--g3) 0, transparent 60%), var(--bg);
+  background-attachment: fixed;
+}
+::selection { background: var(--rose); color: #fff; }
+:focus-visible { outline: 3px solid var(--rose); outline-offset: 4px; border-radius: 14px; }
+a { color: inherit; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
