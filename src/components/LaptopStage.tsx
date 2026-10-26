@@ -113,13 +113,13 @@ function initScene(THREE: Three, stage: HTMLDivElement, canvas: HTMLCanvasElemen
   const hMats = [0xff7aa0, 0xb9a8ff, 0xffd66b, 0x9fe3c9, 0xffb3c8].map((c) => new THREE.MeshPhysicalMaterial({ color: c, roughness: 0.25, clearcoat: 1, clearcoatRoughness: 0.1 }));
   const orbit = Array.from({ length: 5 }, (_, i) => {
     const m = new THREE.Mesh(heartGeo, hMats[i]);
-    m.scale.setScalar(0.28 + (i % 2) * 0.08); m.rotation.z = Math.PI; rig.add(m);
+    m.scale.setScalar(0.28 + (i % 2) * 0.08); rig.add(m);
     return { m, a: (i / 5) * Math.PI * 2, r: 2.5 + (i % 2) * 0.35, y: 0.4 + (i % 3) * 0.55, s: 0.25 + i * 0.03 };
   });
   // burst pool
   const burst = Array.from({ length: 16 }, (_, i) => {
     const m = new THREE.Mesh(heartGeo, hMats[i % 5]);
-    m.visible = false; m.rotation.z = Math.PI; scene.add(m);
+    m.visible = false; scene.add(m);
     return { m, v: new THREE.Vector3(), life: 0 };
   });
 
